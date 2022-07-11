@@ -95,7 +95,7 @@ def create_corpus(texts: str, overlap_only: bool = False):
     """
     if overlap_only:
         all_words = [word.lower() for text in texts for word in text]
-        words = dict.fromkeys(all_words,0)
+        words = SortedDict.fromkeys(all_words,0)
         for word in all_words:
             words[word] += 1
         corpus = []
