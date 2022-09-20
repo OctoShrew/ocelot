@@ -137,6 +137,7 @@ def get_metrics(y_test: list[int], predictions: list[list], model_names: list[st
     for idx,preds in enumerate(predictions):
         if np.max(preds) > 1:
             pred_probs = None
+            disc_preds = preds
         else:
             pred_probs = preds
             disc_preds = np.argmax(pred_probs,axis=1)
