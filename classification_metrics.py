@@ -39,8 +39,8 @@ def make_confusion_matrix(cf: np.array,
     title:         Title for the heatmap. Default is None.
     '''
 
-    rc('text', usetex=True)
-    rc('font', family='serif')
+#     rc('text', usetex=True)
+#     rc('font', family='serif')
     # CODE TO GENERATE TEXT INSIDE EACH SQUARE
     blanks = ['' for i in range(cf.size)]
 
@@ -117,8 +117,8 @@ def make_pred_histogram(probs: list[list], title: str="", fig_size: tuple[int] =
     
     Plots the histogram and does not return anything.
     """
-    rc('text', usetex=True)
-    rc('font', family='serif')
+#     rc('text', usetex=True)
+#     rc('font', family='serif')
     _ = plt.figure(figsize=fig_size)
     flattened = [p for ps in probs for p in ps]
     _ = plt.hist(flattened, bins=max(10,int(len(flattened)/100)))
@@ -129,7 +129,7 @@ def make_pred_histogram(probs: list[list], title: str="", fig_size: tuple[int] =
     
 from sklearn.metrics import confusion_matrix
 import seaborn as sns
-from matplotlib import rc
+# from matplotlib import rc
 def get_metrics(y_test: list[int], predictions: list[list], model_names: list[str] = None, class_names: list[str] = None) -> None:
     if model_names is not None:
         assert len(model_names) == len(predictions) # make sure there's a name given for each model
